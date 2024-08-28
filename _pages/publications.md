@@ -21,6 +21,8 @@ children:
 <h2>Journal Articles</h2>
     {% bibliography -q @*[type=journal]* %}
 
+<br> <br>
+
 <h2>Conference Papers</h2>
     {% bibliography -q @*[type=conference]* %}
 
