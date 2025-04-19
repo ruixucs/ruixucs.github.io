@@ -193,6 +193,15 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - _posts/
+  - _pages/blog.md
+  - _pages/repositories.md 
+  - _pages/cv.md
+  - _pages/teaching.md
+  - _pages/people.md
+  - assets/json/resume.json
+  - _data/cv.yml
+  - _includes/repository/
 keep_files:
   - CNAME
   - .nojekyll
