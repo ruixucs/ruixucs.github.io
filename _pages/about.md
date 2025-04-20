@@ -27,8 +27,20 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+👋 Hi, I'm Rui Xu
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+💬 I'm comfortable communicating in English, Mandarin (Native), and French (Junior).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+🎓 Currently pursuing a B.Sc. in Computer Science with a focus on Artificial Intelligence at McGill University, maintaining a GPA of 3.8/4.0.
+
+🤔 I'm fascinated by intelligent systems and machine learning. Questions that drive me include: How can AI better assist humans? How can we make models more accurate? How can we optimize existing solutions? These curiosities fuel my continuous learning and exploration.
+
+💻 My technical toolkit includes proficiency in C/C++, Python, Java, and other programming languages. I also have a solid foundation in mathematical analysis, graph theory, probability & statistics, which enables me to better explore the possibilities in AI.
+
+💪 My greatest assets are:
+- Eagerness to learn new things
+- Curiosity to delve into uncharted territories
+- Drive to stay abreast of latest developments
+- Persistence to work hard through challenges
+
+Looking forward to embarking on new explorations in AI and making an impact through technology!
