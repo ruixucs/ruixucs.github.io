@@ -31,7 +31,7 @@ latest_posts:
 
 💬 I'm comfortable communicating in English, Mandarin (Native), and French (Junior).
 
-🎓 Currently pursuing a B.Sc. in Computer Science with a focus on Artificial Intelligence at McGill University, maintaining a GPA of 3.8/4.0.
+🎓 Currently pursuing a B.Sc. in Computer Science with a focus on Artificial Intelligence at McGill University.
 
 🤔 I'm fascinated by intelligent systems and machine learning. Questions that drive me include: How can AI better assist humans? How can we make models more accurate? How can we optimize existing solutions? These curiosities fuel my continuous learning and exploration.
 
