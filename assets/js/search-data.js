@@ -23,28 +23,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-people",
-          title: "people",
-          description: "members of the lab or group",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/people/";
-          },
-        },{id: "dropdown-bookshelf",
-              title: "bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/books/";
-              },
-            },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/blog/";
-              },
-            },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
+        },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
         
           title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
@@ -82,7 +61,17 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-3d-segmentation-within-root-system-architecture",
+          section: "News",},{id: "projects-real-world-to-stylized-video-generation",
+          title: 'Real-World to Stylized Video Generation',
+          description: "Built a comprehensive pipeline and trained a multimodal large model that transforms real-world images into stylized videos with various artistic styles. Developed high-quality custom datasets and achieved superior model performance across 15+ distinct visual styles.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/multimodal_ai/";
+            },},{id: "projects-vision-only-dexterous-robotic-hand",
+          title: 'Vision-Only Dexterous Robotic Hand',
+          description: "Implemented and improved a vision-only dexterous robotic hand system, integrating computer vision and 3D pose estimation into robotic grasping control. This project explores replacing traditional sensors with visual perception to enhance precision and adaptability in robotic manipulation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/robotic_hand/";
+            },},{id: "projects-3d-segmentation-within-root-system-architecture",
           title: '3D segmentation within root system architecture',
           description: "Root systems are fundamental to the growth and health of nearly all plant species. Phenotyping these systems has been a long-lasting bottleneck in plant breeding due to their complex nature and the indispensable morphological information they contain. This project seeks to advance the precision of root system analysis by segmenting the primary root and all first-order lateral roots. Through this approach, we aim to achieve more accurate measurements of their essential traits, including root length, angles, diameters, and surface areas, thereby improving the efficiency and effectiveness of breeding programs.",
           section: "Projects",handler: () => {
