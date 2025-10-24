@@ -27,18 +27,11 @@ latest_posts:
 
 👋 Hi, I'm Rui Xu
 
-💬 I'm comfortable communicating in English, Mandarin (Native), and French (Junior).
+🎓 I'm a third-year undergraduate student at McGill University, pursuing a B.Sc. in Computer Science with a focus on Artificial Intelligence. I will graduate in 2027.
 
-🎓 Currently pursuing a B.Sc. in Computer Science with a focus on Artificial Intelligence at McGill University.
+🔬 My research interests lie in **Computer Vision**, **Robotics**, and **Multimodal Learning**, where I'm passionate about developing intelligent systems that can perceive and interact with the real world.
 
-🤔 I'm fascinated by intelligent systems and machine learning. Questions that drive me include: How can AI better assist humans? How can we make models more accurate? How can we optimize existing solutions? These curiosities fuel my continuous learning and exploration.
+💼 You can learn more about my past experience in my [projects](/projects/) page.
 
-💻 My technical toolkit includes proficiency in C/C++, Python, Java, and other programming languages. I also have a solid foundation in mathematical analysis, graph theory, probability & statistics, which enables me to better explore the possibilities in AI.
+🌟 I'm actively **looking for research internship opportunities** in Computer Vision and Robotics. If you have any openings or collaboration opportunities, please feel free to contact me!
 
-💪 My greatest assets are:
-- Eagerness to learn new things
-- Curiosity to delve into uncharted territories
-- Drive to stay abreast of latest developments
-- Persistence to work hard through challenges
-
-Looking forward to embarking on new explorations in AI and making an impact through technology!
