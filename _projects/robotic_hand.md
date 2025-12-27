@@ -3,7 +3,7 @@ layout: page
 is_project: true
 title: Vision-Only Dexterous Robotic Hand
 description: Implemented and improved a vision-only dexterous robotic hand system, integrating computer vision and 3D pose estimation into robotic grasping control. This project explores replacing traditional sensors with visual perception to enhance precision and adaptability in robotic manipulation.
-img: assets/gif/robotics_clip (1) (1).gif
+img: assets/gif/robotics_clip (1) (1) (1).gif
 importance: 1
 category: work
 related_publications: false
@@ -15,7 +15,7 @@ During my internship as a Robotics Engineer at a startup company, I implemented 
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/gif/robotics_clip (1) (1).gif" title="robotic_grasping_demo" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/gif/robotics_clip (1) (1) (1).gif" title="robotic_grasping_demo" class="img-fluid rounded z-depth-1" %}
         <div class="caption">
             Demonstration of robotic grasping actions using vision-only control system.
         </div>
