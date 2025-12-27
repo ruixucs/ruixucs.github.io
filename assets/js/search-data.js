@@ -63,7 +63,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-real-world-to-stylized-video-generation",
           title: 'Real-World to Stylized Video Generation',
-          description: "Built a comprehensive pipeline and trained a multimodal large model that transforms real-world images into stylized videos with various artistic styles. Developed high-quality custom datasets and achieved superior model performance across 15+ distinct visual styles.",
+          description: "Built a comprehensive pipeline and trained a multimodal large model that transforms real-world videos into stylized videos with various artistic styles. Developed high-quality custom datasets and achieved superior model performance across 15+ distinct visual styles.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/multimodal_ai/";
             },},{id: "projects-vision-only-dexterous-robotic-hand",
