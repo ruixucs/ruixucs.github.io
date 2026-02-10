@@ -29,7 +29,7 @@ latest_posts:
 
 🎓 I'm a third-year undergraduate student at McGill University, pursuing a B.Sc. in Computer Science with a focus on Artificial Intelligence. I will graduate in 2027.
 
-🔬 My research interests lie in **Computer Vision**, **Robotics**, and **Multimodal Learning**, where I'm passionate about developing intelligent systems that can perceive and interact with the real world.
+🔬 My research interests lie in **Computer Vision**, **Robotics**, and **Visual Language Models (VLMs)**, where I'm passionate about developing intelligent systems that can perceive, understand, and interact with the real world.
 
 💼 You can learn more about my past experience in my [projects](/projects/) page.
 
