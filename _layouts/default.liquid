@@ -47,10 +47,16 @@
       {% endif %}
     </div>
 
+    <!-- Robot Container -->
+    <div id="robot-container" style="position: fixed; bottom: -60px; right: 20px; width: 500px; height: 500px; z-index: 1000; pointer-events: none; overflow: visible;"></div>
+
     <!-- Footer -->
     {% include footer.liquid %}
 
     <!-- JavaScripts -->
     {% include scripts.liquid %}
+    
+    <!-- Robot Model Script -->
+    <script type="module" src="{{ '/assets/js/robot-model.js' | relative_url }}"></script>
   </body>
 </html>
