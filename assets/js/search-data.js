@@ -61,12 +61,7 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-real-world-to-stylized-video-generation",
-          title: 'Real-World to Stylized Video Generation',
-          description: "Built a comprehensive pipeline and trained a multimodal large model that transforms real-world videos into stylized videos with various artistic styles. Developed high-quality custom datasets and achieved superior model performance across 15+ distinct visual styles.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/multimodal_ai/";
-            },},{id: "projects-vision-only-dexterous-robotic-hand",
+          section: "News",},{id: "projects-vision-only-dexterous-robotic-hand",
           title: 'Vision-Only Dexterous Robotic Hand',
           description: "Implemented and improved a vision-only dexterous robotic hand system, integrating computer vision and 3D pose estimation into robotic grasping control. This project explores replacing traditional sensors with visual perception to enhance precision and adaptability in robotic manipulation.",
           section: "Projects",handler: () => {
@@ -76,6 +71,11 @@ ninja.data = [{
           description: "Root systems are fundamental to the growth and health of nearly all plant species. Phenotyping these systems has been a long-lasting bottleneck in plant breeding due to their complex nature and the indispensable morphological information they contain. This project seeks to advance the precision of root system analysis by segmenting the primary root and all first-order lateral roots. Through this approach, we aim to achieve more accurate measurements of their essential traits, including root length, angles, diameters, and surface areas, thereby improving the efficiency and effectiveness of breeding programs.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/root_segment/";
+            },},{id: "projects-vlm-enhanced-stylized-video-generation",
+          title: 'VLM-Enhanced Stylized Video Generation',
+          description: "Integrated a pretrained Visual Language Model (VLM) into the FlashI2V pipeline to enhance semantic understanding for stylized video generation. Built a 600K+ styled image dataset with 13 artistic styles.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/vlm_video_generation/";
             },},{
         id: 'social-email',
         title: 'email',
