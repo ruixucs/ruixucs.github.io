@@ -49,6 +49,16 @@
 
     <!-- Robot Container -->
     <div id="robot-container" style="position: fixed; bottom: -60px; right: 20px; width: 500px; height: 500px; z-index: 1000; pointer-events: none; overflow: visible;"></div>
+    <style>
+      @media (max-width: 768px) {
+        #robot-container {
+          width: 200px !important;
+          height: 200px !important;
+          bottom: -20px !important;
+          right: 10px !important;
+        }
+      }
+    </style>
 
     <!-- Footer -->
     {% include footer.liquid %}

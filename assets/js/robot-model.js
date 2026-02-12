@@ -5,6 +5,9 @@ function init() {
     const container = document.getElementById('robot-container');
     if (!container) return;
 
+    // Detect mobile
+    const isMobile = window.innerWidth <= 768;
+
     // 1. Setup Scene
     const scene = new THREE.Scene();
     
@@ -36,28 +39,25 @@ function init() {
     bottomLight.position.set(0, -3, 5);
     scene.add(bottomLight);
 
-    // 5. Create Placeholder (Cube) - REMOVED
-    // const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-    // const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-    // const cube = new THREE.Mesh(geometry, material);
-    // scene.add(cube);
-    
-    // Variable to store the object we want to rotate (cube or loaded model)
+    // Variable to store the object we want to rotate
     let targetObject = null;
 
-    // 6. GLTFLoader
+    // Responsive scale: smaller on mobile
+    const modelScale = isMobile ? 1.2 : 2;
+    const modelPosX = isMobile ? 0.5 : 1;
+
+    // 5. GLTFLoader
     const loader = new GLTFLoader();
     loader.load(
         '/assets/models/robot.glb',
         function (gltf) {
             const model = gltf.scene;
             
-            // Adjust scale and position - keep centered to avoid clipping
-            model.scale.set(2, 2, 2);
-            model.position.set(1, 0, 0);
+            model.scale.set(modelScale, modelScale, modelScale);
+            model.position.set(modelPosX, 0, 0);
             
             scene.add(model);
-            targetObject = model; // Update target object for rotation
+            targetObject = model;
         },
         undefined,
         function (error) {
@@ -65,27 +65,34 @@ function init() {
         }
     );
 
-    // 7. Mouse Tracking Logic
+    // 6. Pointer Tracking Logic (mouse + touch)
     const mouse = new THREE.Vector2();
     let windowHalfX = window.innerWidth / 2;
     let windowHalfY = window.innerHeight / 2;
 
+    // Mouse tracking (desktop)
     function onDocumentMouseMove(event) {
         mouse.x = (event.clientX - windowHalfX) / 2;
         mouse.y = (event.clientY - windowHalfY) / 2;
     }
 
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
+    // Touch tracking (mobile) - touch where you want the robot to look
+    function onDocumentTouch(event) {
+        if (event.touches.length >= 1) {
+            mouse.x = (event.touches[0].clientX - windowHalfX) / 2;
+            mouse.y = (event.touches[0].clientY - windowHalfY) / 2;
+        }
+    }
 
-    // 8. Animation Loop
+    document.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.addEventListener('touchstart', onDocumentTouch, { passive: true });
+    document.addEventListener('touchmove', onDocumentTouch, { passive: true });
+
+    // 7. Animation Loop
     function animate() {
         requestAnimationFrame(animate);
 
         if (targetObject) {
-            // Simple rotation to face the mouse position
-            // We map mouse position to rotation angles
-            // You might need to adjust the sensitivity (divisors) based on your preference
-            
             const targetRotationX = mouse.y * 0.001;
             const targetRotationY = mouse.x * 0.001;
 
@@ -98,18 +105,16 @@ function init() {
 
     animate();
 
-    // 9. Handle Window Resize
+    // 8. Handle Window Resize
     window.addEventListener('resize', onWindowResize, false);
 
     function onWindowResize() {
         windowHalfX = window.innerWidth / 2;
         windowHalfY = window.innerHeight / 2;
 
-        // Update camera aspect ratio
         camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
 
-        // Update renderer size
         renderer.setSize(container.clientWidth, container.clientHeight);
     }
 }
