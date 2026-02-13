@@ -11,13 +11,12 @@ related_publications: false
 
 ## Project Overview
 
-During my AI Research Internship at Peking University, I developed a **VLM-Enhanced FlashI2V** framework for stylized video generation. This project addresses two key challenges in Image-to-Video (I2V) models: **limited semantic understanding** and **conditional image leakage**.
+During my AI Research Internship at Peking University, I developed a **VLM** framework for stylized video generation. This project addresses two key challenges in Image-to-Video (I2V) models: **limited semantic understanding** and **conditional image leakage**.
 
 ### Key Contributions
 
 1. **VLM Integration**: Incorporated a frozen Qwen2.5-VL into the I2V pipeline to enhance semantic understanding without retraining
-2. **FlashI2V Framework**: Implemented Latent Shifting and Fourier Guidance to solve conditional image leakage
-3. **Stylized Dataset**: Built a 600K+ image dataset across 13 artistic styles
+2. **Stylized Dataset**: Built a 600K+ image dataset across 13 artistic styles
 
 ---
 
@@ -25,7 +24,7 @@ During my AI Research Internship at Peking University, I developed a **VLM-Enhan
 
 <div class="row mt-3">
     <div class="col-12">
-        {% include figure.liquid loading="eager" path="assets/img/style_flow.png" title="VLM-Enhanced FlashI2V Architecture" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/style_flow.png" title="VLM-Enhanced I2V Architecture" class="img-fluid rounded z-depth-1" %}
         <div class="caption text-center">
             Overview: Frozen VLM (Qwen2.5-VL) + trainable umT5 + CLIP encoder for multimodal conditioning, with DiT for conditional denoising.
         </div>
