@@ -41,7 +41,7 @@ The architecture consists of three main components:
 
 ---
 
-## FlashI2V: Solving Conditional Image Leakage
+## Solving Conditional Image Leakage
 
 **Conditional image leakage** occurs when the denoiser exploits the input image as a shortcut, causing muted motion and color drift.
 
