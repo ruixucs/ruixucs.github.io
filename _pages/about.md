@@ -8,6 +8,7 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
+  image_alt: Rui Xu - Computer Science student at McGill University
   more_info: >
       <p>McGill University Faculty of Science</p>
 
