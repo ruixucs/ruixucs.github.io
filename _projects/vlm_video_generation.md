@@ -1,8 +1,8 @@
 ---
 layout: page
 is_project: true
-title: VLM-Enhanced Stylized Video Generation
-description: Contributed to UniWorld-OSP2.0 — a 14B+ Image-to-Video framework built on the Fourier-Guided Latent Shifting (FlashI2V) paradigm. Integrated a frozen 7B Qwen2.5-VL for lossless semantic conditioning and built a 600K-image stylized dataset covering 12 artistic styles.
+title: Stylized Image-to-Video Dataset (600K / 12 Styles)
+description: Built the 600K-image multi-style dataset powering UniWorld-OSP2.0 — 12 artistic styles, automated keyframe-to-video pipeline, quality gates for subject identity and motion coherence.
 img: assets/img/style_example.png
 importance: 1
 category: work
@@ -11,90 +11,85 @@ related_publications: false
 
 ## Overview
 
-During my AI Research Internship at **Peking University**, I contributed to [**UniWorld-OSP2.0**](https://github.com/PKU-YuanGroup/UniWorld) — a unified conditional video generation framework built on the **Fourier-Guided Latent Shifting (FlashI2V)** paradigm. Compared with conventional I2V/T2V systems that concatenate the conditioning image into the noise, FlashI2V injects it as a **latent offset**, which prevents conditional image leakage and restores natural motion dynamics.
+During my AI Research Internship at **Peking University**, I led the **stylized-video data effort** behind [**UniWorld-OSP2.0**](https://github.com/PKU-YuanGroup/UniWorld) — the lab's next-generation Image-to-Video (I2V) framework. Training a unified Image-to-Stylized-Video (I2SV) model needs paired data at scale: real-world clips to supervise motion, plus the **same content re-rendered in each target style** to supervise stylization without distorting subject or dynamics. Off-the-shelf datasets do not exist at this coverage, so I designed and built one end-to-end.
 
-My two deliverables on this project:
+**My contribution.** End-to-end ownership of the stylized dataset:
 
-1. **VLM-enhanced semantic conditioning** — plugged a frozen 7B Qwen2.5-VL into the I2V pipeline as a drop-in replacement for shallow text encoders, inheriting rich scene understanding without any retraining.
-2. **600K-image stylized dataset (12 styles)** — the data backbone that turned I2V into unified Image-to-Stylized-Video (I2SV).
-
----
-
-## 🎯 Highlights
-
-### FlashI2V — Stabilized Motion
-
-- **Latent Shifting**: injects the conditioning image as an additive offset in latent space rather than noisy concatenation → no conditional image leakage.
-- **Fourier Guidance**: high-frequency residual path recovers sharp edges and textures that the base denoiser would otherwise wash out.
-- **Outcome**: continuous motion with preserved structure, no muted dynamics or color drift.
-
-### VLM-Enhanced Semantic Conditioning
-
-- Integrates a **frozen 7B Qwen2.5-VL** in place of a shallow text encoder.
-- **Lossless semantic inheritance** — scene, subject, and spatial relations are grounded by a real VLM, not a 77-token CLIP projection.
-- Zero added training cost: the VLM stays frozen; only the umT5 control branch is trainable.
-
-### Unified Image-to-Stylized-Video (I2SV)
-
-- A single input image → a video rendered in any of **12 artistic styles**.
-- Style is conditioned end-to-end, so subject identity and motion coherence survive the transfer.
+- **~600,000 styled images** across **12 artistic styles**, built from curated source video.
+- A four-stage automated pipeline (**curate → keyframe → stylize → animate**) with quality gates between each stage.
+- A long-tail composition strategy — two anchor styles at scale plus ten diverse styles — that stabilized downstream I2SV training across domains.
 
 ---
 
-## 🧱 Architecture
+## 🎯 Dataset Highlights
+
+### Scale & Coverage
+
+- **~600K styled images** across **12 styles** spanning animation, traditional painting, digital, and thematic aesthetics.
+- Every image paired with a **source clip and a stylized keyframe** so the downstream model can jointly supervise motion and style.
+- Balanced long tail: two anchor styles carry depth; ten diverse styles carry breadth.
+
+### Automated, Repeatable Pipeline
+
+- Curation → keyframe → stylize → animate, each stage a standalone step that can be re-run on new sources without re-processing earlier ones.
+- Per-stage **quality gates** (resolution, subject clarity, motion, stylization fidelity) so that downstream training never sees silently broken samples.
+- Designed so adding a **new style** costs only a style-specific stylization pass, not a full rebuild.
+
+### Style-Aware Balance
+
+- **Ghibli** and **3D Rendering** as anchor distributions (~200K each) — enough depth to fully condition on the style.
+- Ten remaining styles (~20K each) cover the rest, preventing the model from collapsing onto the anchors.
+
+---
+
+## 🛠️ How the Dataset Is Built
 
 <div class="row mt-3">
   <div class="col-12">
-    {% include figure.liquid loading="eager" path="assets/img/style_flow.png" title="UniWorld-OSP2.0 Architecture" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="assets/img/style_flow.png" title="Stylized Dataset Pipeline" class="img-fluid rounded z-depth-1" %}
     <div class="caption text-center">
-      Frozen Qwen2.5-VL (semantics) + trainable umT5 (control) + frozen CLIP (visual) → DiT backbone with Cross-Attention and AdaLN modulation, denoising in the latent space of a Causal VAE.
+      Four-stage pipeline: curated source clips → middle-frame keyframes → style transfer → image-to-video animation, with quality gates between each stage.
     </div>
   </div>
 </div>
 
-| Component              | Role                                                                                                        |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **Causal VAE**         | Pixel ↔ latent mapping with 4× temporal / 8× spatial downsampling; keeps the transformer tractable.        |
-| **Multimodal Encoder** | Three branches — **frozen Qwen2.5-VL** (semantics), **trainable umT5** (control), **frozen CLIP** (visual). |
-| **DiT Denoiser**       | Diffusion Transformer with Cross-Attention to the encoder stack and AdaLN modulation on the timestep.       |
+| Stage                  | What happens                                                                                                     | Quality gate                                           |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| **1. Source curation** | Collect short clips (5–20 s, ≥720 p) with clear subjects and meaningful motion.                                  | Resolution, shot length, subject clarity, motion score |
+| **2. Keyframe**        | Extract the middle frame as the representative content anchor for the clip.                                      | Blur / exposure / composition check                    |
+| **3. Stylization**     | [Step1X-Edit](https://github.com/stepfun-ai/Step1X-Edit) re-renders the keyframe into the target artistic style. | Subject preservation, style fidelity                   |
+| **4. Animation**       | [Wan2.1-I2V-14B](https://github.com/Wan-Video/Wan2.1) animates the stylized keyframe back into video.            | Temporal coherence, motion sanity                      |
+
+The dataset is the (source clip, stylized keyframe, stylized video) triple — enough to teach an I2V model to stylize an input image while keeping the real-video motion distribution.
 
 ---
 
-## 🎨 Stylized Dataset — 600K Images, 12 Styles
+## 🎨 Style Coverage (12 Styles)
 
 <div class="row mt-3">
   <div class="col-12">
-    {% include figure.liquid loading="eager" path="assets/img/style_example.png" title="Stylized Video Examples" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="assets/img/style_example.png" title="Style Gallery" class="img-fluid rounded z-depth-1" %}
     <div class="caption text-center">
       One frame per style from the 12-style gallery.
     </div>
   </div>
 </div>
 
-### Pipeline
+| Category        | Styles                                   | Per-style size |
+| --------------- | ---------------------------------------- | -------------- |
+| **Animation**   | Ghibli, Disney, Chibi, Fairy Tale        | ~200K / ~20K   |
+| **Traditional** | Oil Painting, Ink Painting               | ~20K           |
+| **Digital**     | 3D Rendering, Pixel Art, Lego, Vaporwave | ~200K / ~20K   |
+| **Thematic**    | Cyberpunk, Gotham Noir                   | ~20K           |
 
-1. **Source curation** — short clips (5–20 s, ≥720 p) filtered for subject clarity and motion.
-2. **Keyframe extraction** — middle-frame strategy for representative content.
-3. **Stylization** — [Step1X-Edit](https://github.com/stepfun-ai/Step1X-Edit) renders each keyframe in the target style.
-4. **Animation** — [Wan2.1-I2V-14B](https://github.com/Wan-Video/Wan2.1) animates the stylized frame while the training pipeline supervises on the (real-video, stylized-frame) pair.
-
-### Style Coverage
-
-| Category        | Styles                                   |
-| --------------- | ---------------------------------------- |
-| **Animation**   | Ghibli, Disney, Chibi, Fairy Tale        |
-| **Traditional** | Oil Painting, Ink Painting               |
-| **Digital**     | 3D Rendering, Pixel Art, Lego, Vaporwave |
-| **Thematic**    | Cyberpunk, Gotham Noir                   |
-
-**Scale**: ~600,000 styled images — Ghibli and 3D Rendering dominate (~200K each); the remaining 10 styles carry ~20K each to anchor the long tail.
+**Anchors**: Ghibli and 3D Rendering, ~200K each. **Long tail**: 10 styles at ~20K each. **Total**: ~600K styled images.
 
 ---
 
-## 📊 Outcomes
+## 📦 Where the Dataset Plugs In
 
-- **Anti-leakage I2V** — the FlashI2V objective removes the shortcut on which prior inpainting/concatenation baselines rely.
-- **VLM conditioning pays off out-of-domain** — stylized prompts with heavy semantic load (multi-subject scenes, unusual compositions) are preserved through the full pipeline.
-- **Unified I2SV works at scale** — one model, one input image, 12 stylization targets, consistent subject and motion.
+The dataset is the supervision backbone for UniWorld-OSP2.0's unified **Image-to-Stylized-Video (I2SV)** training:
 
-> Full technical report and model weights: see the [UniWorld-OSP2.0 release](https://github.com/PKU-YuanGroup/UniWorld).
+- A single input image → a video rendered in any of the 12 styles, with subject identity and motion coherence preserved.
+- The dataset's per-style balance is what lets one model generalize across styles instead of fragmenting into 12 specialists.
+- Training pipeline, model architecture, and results are described in the [UniWorld-OSP2.0 release](https://github.com/PKU-YuanGroup/UniWorld).
