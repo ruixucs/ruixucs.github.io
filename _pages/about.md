@@ -3,14 +3,13 @@ layout: about
 title: about
 permalink: /
 
-
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   image_alt: Rui Xu - Computer Science student at McGill University
   more_info: >
-      <p>McGill University Faculty of Science</p>
+    <p>McGill University Faculty of Science</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -35,4 +34,3 @@ latest_posts:
 💼 You can learn more about my past experience in my [projects](/projects/) page.
 
 🌟 I'm actively **looking for research internship opportunities** in Computer Vision and Robotics. If you have any openings or collaboration opportunities, please feel free to contact me!
-
