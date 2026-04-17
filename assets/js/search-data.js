@@ -73,7 +73,7 @@ ninja.data = [{
               window.location.href = "/projects/root_segment/";
             },},{id: "projects-vlm-enhanced-stylized-video-generation",
           title: 'VLM-Enhanced Stylized Video Generation',
-          description: "Integrated a pretrained Visual Language Model (VLM) into the FlashI2V pipeline to enhance semantic understanding for stylized video generation. Built a 600K+ styled image dataset with 13 artistic styles.",
+          description: "Contributed to UniWorld-OSP2.0 — a 14B+ Image-to-Video framework built on the Fourier-Guided Latent Shifting (FlashI2V) paradigm. Integrated a frozen 7B Qwen2.5-VL for lossless semantic conditioning and built a 600K-image stylized dataset covering 12 artistic styles.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vlm_video_generation/";
             },},{
