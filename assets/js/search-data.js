@@ -71,9 +71,9 @@ ninja.data = [{
           description: "Root systems are fundamental to the growth and health of nearly all plant species. Phenotyping these systems has been a long-lasting bottleneck in plant breeding due to their complex nature and the indispensable morphological information they contain. This project seeks to advance the precision of root system analysis by segmenting the primary root and all first-order lateral roots. Through this approach, we aim to achieve more accurate measurements of their essential traits, including root length, angles, diameters, and surface areas, thereby improving the efficiency and effectiveness of breeding programs.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/root_segment/";
-            },},{id: "projects-vlm-enhanced-stylized-video-generation",
-          title: 'VLM-Enhanced Stylized Video Generation',
-          description: "Contributed to UniWorld-OSP2.0 — a 14B+ Image-to-Video framework built on the Fourier-Guided Latent Shifting (FlashI2V) paradigm. Integrated a frozen 7B Qwen2.5-VL for lossless semantic conditioning and built a 600K-image stylized dataset covering 12 artistic styles.",
+            },},{id: "projects-stylized-image-to-video-dataset-600k-12-styles",
+          title: 'Stylized Image-to-Video Dataset (600K / 12 Styles)',
+          description: "Built the 600K-image multi-style dataset powering UniWorld-OSP2.0 — 12 artistic styles, automated keyframe-to-video pipeline, quality gates for subject identity and motion coherence.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vlm_video_generation/";
             },},{
