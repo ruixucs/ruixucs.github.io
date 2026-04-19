@@ -21,4 +21,4 @@ related_publications: false
   </div>
 </div>
 
-Data production work during my AI Research Internship at **Peking University**, mainly on **image stylization** for the stylized Image-to-Video dataset behind [**UniWorld-OSP2.0**](https://github.com/PKU-YuanGroup/UniWorld).
+Data production work during my AI Research Internship at **Peking University**, mainly on **image stylization** for the stylized Image-to-Video dataset behind [**UniWorld-OSP2.0**](https://github.com/PKU-YuanGroup/UniWorld). UniWorld-OSP2.0 is a VLM-Enhanced Unified Framework for Image-to-Video Generation from the Open-Sora Plan team — feel free to check out the project on [GitHub](https://github.com/PKU-YuanGroup/UniWorld).
