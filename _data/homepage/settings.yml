@@ -1,0 +1,49 @@
+# Homepage settings (used by _layouts/home.liquid and _layouts/project.liquid).
+# The bio text lives in _pages/about.md.
+
+name: Rui (Ray) Xu
+# Shown as plain text so the address is harder to scrape.
+email: rui.xu3 at mail dot mcgill dot ca
+
+photo: assets/img/prof_pic.jpg
+photo_alt: Illustration of Rui studying at a desk
+
+# Links under the bio, separated by " / ".
+links:
+  - label: CV
+    url: /assets/pdf/Rui_Xu_Resume.pdf
+  - label: GitHub
+    url: https://github.com/ruixucs
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/xu-ray-rui-3b9a36292
+  - label: Blog
+    url: /blog/
+
+# Interactive 3D robot (assets/js/robot-model.js) in the bottom-right corner of
+# every page.
+robot_model: true
+
+# Homepage sections, in page order. Set `show: false` to hide a section; the
+# content stays in its data file. `id` is both the #anchor and the template name
+# (_includes/home/<id>.liquid): keep it, and edit `title` to rename a section.
+sections:
+  - id: news
+    title: News
+    show: false # entries: _data/homepage/news.yml
+    visible: 5 # entries shown before "Show more..."
+  - id: research
+    title: Research
+    show: true # entries: _data/homepage/research.yml
+  - id: projects
+    title: Side Projects
+    show: true # project pages in _projects/ with this category
+    category: fun
+  - id: blog
+    title: Blog
+    show: true # entries: _data/homepage/blog.yml
+  - id: talks
+    title: Talks
+    show: false # entries: _data/homepage/talks.yml
+  - id: service
+    title: Service
+    show: false # entries: _data/homepage/service.yml

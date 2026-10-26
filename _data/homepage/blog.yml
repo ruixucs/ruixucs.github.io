@@ -1,0 +1,5 @@
+# Posts featured on the homepage.
+- title: "Recovering Usable Keyframes from Egocentric Video"
+  url: /blog/2026/recovering-ego-data/
+  image: /assets/img/ego-recovery/unstack-last-frame-light-poster.jpg
+  summary: "Using reference-guided image editing to clarify action outcomes, constrain changes, and catch failures in egocentric video data."

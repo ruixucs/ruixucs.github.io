@@ -1,0 +1,2 @@
+vlm_seg/trace_ts15/table_scene_15_demo_20260822_212948_seg1_PutOnTable
+edit_mode=completion  score=2.37

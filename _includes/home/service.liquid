@@ -1,0 +1,18 @@
+{%- assign service = site.data.homepage.service -%}
+<section class="section" id="{{ include.section.id }}">
+  <h2 class="section__title">{{ include.section.title }}</h2>
+  <ul class="plain-list">
+    {% for entry in service %}
+      <li>
+        {{ entry.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+        {% if entry.items %}
+          <ul>
+            {% for sub in entry.items %}
+              <li>{{ sub | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>

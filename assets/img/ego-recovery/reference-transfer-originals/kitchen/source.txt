@@ -1,0 +1,2 @@
+vlm_seg/trace_ncb20/new_complex_bg_20_20260822_214726_seg1_PutOnTable
+edit_mode=completion  score=2.37

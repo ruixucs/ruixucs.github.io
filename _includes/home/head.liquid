@@ -1,0 +1,46 @@
+<!-- Title, description, Open Graph, Schema.org and verification tags (same as the al-folio pages) -->
+{% include metadata.liquid %}
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+{% if site.icon.size <= 4 %}
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon }}</text></svg>"
+  >
+{% elsif site.icon != blank %}
+  <link rel="icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache }}">
+{% endif %}
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300..700&display=swap">
+
+<!-- Styles -->
+{% if include.bootstrap %}
+  <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
+  <link rel="stylesheet" href="{{ '/assets/css/jekyll-pygments-themes-github.css' | relative_url | bust_file_cache }}">
+{% endif %}
+<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url | bust_file_cache }}">
+<noscript>
+  <style>
+    /* the research view toggle needs JavaScript; without it every entry is listed */
+    .pub-toggle {
+      display: none;
+    }
+  </style>
+</noscript>
+
+{% include home/robot_importmap.liquid %}
+
+{% if site.enable_google_analytics and site.google_analytics %}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+{% endif %}

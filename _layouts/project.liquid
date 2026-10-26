@@ -1,0 +1,51 @@
+<!doctype html>
+{%- comment -%}
+  Project detail pages (_projects/*.md), styled to match the homepage.
+  Bootstrap is loaded for the grid classes (row, col-*) used inside the pages.
+{%- endcomment -%}
+{%- assign back_anchor = 'research' -%}
+{%- for section in site.data.homepage.settings.sections -%}
+  {%- if section.show and section.category and section.category == page.category -%}
+    {%- assign back_anchor = section.id -%}
+  {%- endif -%}
+{%- endfor -%}
+<html lang="{{ site.lang }}">
+  <head>
+    {% include home/head.liquid bootstrap=true %}
+    <script>
+      // figure.liquid falls back to the original image with $('.responsive-img-srcset').remove()
+      // when a WebP variant is missing; jQuery is not loaded here, so provide just that call.
+      window.$ =
+        window.$ ||
+        function (selector) {
+          return {
+            remove: function () {
+              Array.prototype.forEach.call(document.querySelectorAll(selector), function (el) {
+                el.parentNode.removeChild(el);
+              });
+            },
+          };
+        };
+    </script>
+  </head>
+  <body class="project-page">
+    <main class="page page--article">
+      <p class="back-link">
+        <a href="{{ '/' | relative_url }}#{{ back_anchor }}">&larr; Back to homepage</a>
+      </p>
+      <h1 class="article-title">{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="article-description">{{ page.description }}</p>
+      {% endif %}
+      {% if page.github %}
+        <p class="article-links"><a href="{{ page.github }}">Code</a></p>
+      {% endif %}
+      <article class="article">
+        {{ content }}
+      </article>
+    </main>
+
+    {% include home/footer.liquid %}
+    {% include home/robot.liquid %}
+  </body>
+</html>

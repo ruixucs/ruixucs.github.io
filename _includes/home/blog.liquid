@@ -1,0 +1,20 @@
+{%- assign posts = site.data.homepage.blog -%}
+<section class="section" id="{{ include.section.id }}">
+  <h2 class="section__title">{{ include.section.title }}</h2>
+  {% for post in posts %}
+    <article class="blog-post">
+      {% if post.image %}
+        <a class="blog-post__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ post.image | relative_url }}" alt="" loading="lazy">
+        </a>
+      {% endif %}
+      <div class="blog-post__info">
+        <a class="blog-post__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% if post.summary %}
+          <p>{{ post.summary }}</p>
+        {% endif %}
+        <a class="blog-post__more" href="{{ post.url | relative_url }}">Continue reading &rarr;</a>
+      </div>
+    </article>
+  {% endfor %}
+</section>

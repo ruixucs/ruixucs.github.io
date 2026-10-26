@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}">
+  <head>
+    {% include home/head.liquid bootstrap=true %}
+    {% if page._styles %}
+      <style>{{ page._styles }}</style>
+    {% endif %}
+  </head>
+  <body class="project-page">
+    <main class="page page--article">
+      <p class="back-link"><a href="{{ '/' | relative_url }}#blog">&larr; Back to homepage</a></p>
+      <header>
+        <h1 class="article-title">{{ page.title }}</h1>
+        {% if page.date %}<p class="article-description"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time> &middot; Rui Xu</p>{% endif %}
+        {% if page.description %}<p class="article-description">{{ page.description }}</p>{% endif %}
+      </header>
+      <article class="article" id="markdown-content">{{ content }}</article>
+    </main>
+    {% include home/footer.liquid %}
+    {% include home/robot.liquid %}
+  </body>
+</html>

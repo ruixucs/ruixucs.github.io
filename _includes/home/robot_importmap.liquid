@@ -1,0 +1,14 @@
+{% comment %}
+  Three.js import map for assets/js/robot-model.js. It must be in <head>, before
+  any module script runs; the robot itself is added by home/robot.liquid.
+{% endcomment %}
+{% if site.data.homepage.settings.robot_model %}
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+{% endif %}

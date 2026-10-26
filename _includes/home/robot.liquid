@@ -1,0 +1,9 @@
+{% if site.data.homepage.settings.robot_model %}
+  <!-- Interactive 3D robot (shared by all layouts; needs home/robot_importmap.liquid in <head>) -->
+  <div
+    id="robot-container"
+    aria-hidden="true"
+    style="position: fixed; bottom: 0vw; right: 3vw; width: 25vw; height: 25vw; min-width: 150px; min-height: 150px; max-width: 500px; max-height: 500px; z-index: 1000; pointer-events: none; overflow: visible;"
+  ></div>
+  <script type="module" src="{{ '/assets/js/robot-model.js' | relative_url }}"></script>
+{% endif %}

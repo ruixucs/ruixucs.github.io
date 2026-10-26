@@ -1,0 +1,7 @@
+# News on the homepage, newest first. Hidden for now: set `show: true` for the
+# news section in _data/homepage/settings.yml to display it.
+# Add entries by uncommenting or copying the example (a file with only comments
+# means no entries). `text` accepts Markdown links; quote values that contain ": ".
+#
+# - date: Oct 2026
+#   text: Started exploring reinforcement learning for sim-to-real transfer.

@@ -1,0 +1,16 @@
+{%- assign talks = site.data.homepage.talks -%}
+<section class="section" id="{{ include.section.id }}">
+  <h2 class="section__title">{{ include.section.title }}</h2>
+  <ul class="plain-list">
+    {% for talk in talks %}
+      <li>
+        [{{ talk.date }}] <b>{{ talk.title }}</b> @
+        {% if talk.url -%}
+          <a href="{{ talk.url }}">{{ talk.venue }}</a>
+        {%- else -%}
+          {{ talk.venue }}
+        {%- endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>

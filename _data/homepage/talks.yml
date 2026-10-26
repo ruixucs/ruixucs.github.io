@@ -1,0 +1,9 @@
+# Talks on the homepage, newest first. Hidden for now: set `show: true` for the
+# talks section in _data/homepage/settings.yml to display it.
+# Add entries by uncommenting or copying the example (a file with only comments
+# means no entries). Quote values that contain ": ".
+#
+# - date: Oct 2026
+#   title: Talk title
+#   venue: Lab or event name
+#   url: https://example.com # optional, links the venue

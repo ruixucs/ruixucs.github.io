@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 is_project: true
 title: Stylized Image-to-Video Data
 description: Data production for UniWorld-OSP2.0 — image stylization at scale.

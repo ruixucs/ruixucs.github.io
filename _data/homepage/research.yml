@@ -1,0 +1,148 @@
+# Research entries on the homepage. List them newest first: the "All by date"
+# view keeps this order.
+#
+#   title     entry title (required)
+#   url       where the title and thumbnail link to (project page, paper or PDF)
+#   media     thumbnail: `video` (mp4, plays while on screen) and/or `image`
+#             (still image, also used as the video poster); shown at up to 320x200
+#   authors   list of {name, url}; add `me: true` for yourself, `equal: true`
+#             for equal contribution (*), `advising: true` for equal advising (†),
+#             `note: project lead` to print "(project lead)" after the name
+#   role      extra line under the authors (or instead of them), e.g. your role
+#   venue     venue or status line, e.g. "Conference on Robot Learning (CoRL 2026)"
+#   notes     extra lines (workshops, awards); HTML allowed, e.g.
+#             '<a href="https://example.com">Workshop (CoRL 2026)</a>, <span class="award">Best Paper</span>'
+#   links     list of {label, url}, shown as "Paper • Code • ..."
+#   tldr      one-sentence summary
+#   topics    keys from `topics` below, used by the "All by topic" view
+#   selected  true to include the entry in the "Selected" view
+#
+# Quote values that contain ": " (common in paper titles), e.g.
+#   title: "RoboFoo: Agentic Task and Motion Planning"
+
+topics: # topics without entries get no tab
+  - key: robotics
+    label: Robotics
+  - key: world-model
+    label: World Model
+  - key: 3d-vision
+    label: 3D Vision
+  - key: projects
+    label: Projects
+
+items:
+  # Template for the project you lead; fill it in, uncomment it and keep it first.
+  # - title: "Working title"
+  #   url: /projects/my-project/ # optional: a project page, or leave out
+  #   media:
+  #     image: /assets/img/home/my-project.jpg
+  #   authors:
+  #     - name: Rui Xu
+  #       me: true
+  #       note: project lead
+  #     - name: Collaborator Name
+  #     - name: Advisor Name
+  #   venue: Ongoing project, 2026
+  #   tldr: One sentence on the problem, your approach and the (expected) result.
+  #   topics: [robotics]
+  #   selected: true
+
+  - title: "Visual Sim-to-Real Learning for Robotic Insertion under Geometric Variations: Application to Rebar Installation"
+    url: https://rebarsim.github.io/
+    media:
+      video: /assets/video/home/rebarsim.mp4
+      image: /assets/img/home/rebarsim.jpg
+    authors:
+      - name: Tao Sun
+      - name: Beining Han
+      - name: Patrick Yin
+      - name: Rui Xu
+        me: true
+      - name: Harry He
+      - name: Abhishek Gupta
+      - name: Szymon Rusinkiewicz
+      - name: Yi Shao
+    venue: Under review, 2026
+    links:
+      - label: Project Page
+        url: https://rebarsim.github.io/
+      - label: arXiv
+        url: https://arxiv.org/abs/2609.20477
+    tldr: A visuomotor rebar-insertion policy trained entirely in simulation — an RL teacher over procedurally generated rebar geometries, distilled into a multi-view RGB student — transfers zero-shot to a real robot and seats factory rebars in 91.3% of rollouts.
+    topics: [robotics]
+    selected: true
+
+  - title: "Uniworld-OSP2.0: A VLM-Enhanced Unified Framework for Image-to-Video Generation"
+    url: /Uniworld-OSP2.0.pdf
+    media:
+      image: /assets/img/home/osp2_cover.jpg
+    authors:
+      - name: Open-Sora Plan Team
+    role: "My part: image stylization for the stylized video dataset (AI Research Intern, Peking University)"
+    venue: Technical Report, 2025
+    links:
+      - label: Tech Report
+        url: /Uniworld-OSP2.0.pdf
+      - label: Code
+        url: https://github.com/PKU-YuanGroup/UniWorld/tree/main/UniWorld-OSP2.0
+    tldr: Scales the FlashI2V image-to-video framework to 14B parameters with a frozen 7B vision-language model as its semantic encoder, and adds a stylized video dataset for unified image-to-stylized-video generation.
+    topics: [world-model]
+    selected: true
+
+  - title: Vision-Only Dexterous Robotic Hand
+    url: /projects/robotic_hand/
+    media:
+      video: /assets/video/home/dex_hand.mp4
+      image: /assets/img/home/dex_hand.jpg
+    role: Industry project · Robotics Engineer Intern at a startup
+    links:
+      - label: Project Page
+        url: /projects/robotic_hand/
+    tldr: A dexterous robotic hand driven by visual perception alone — 3D pose estimation and computer vision replace traditional force and tactile sensors in the grasping loop.
+    topics: [robotics, projects]
+    selected: true
+
+  - title: 3D skeletonization and phenotyping for soybean root system architecture using a bio-inspired algorithm
+    url: https://doi.org/10.1016/j.compag.2025.110890
+    media:
+      video: /assets/video/home/root_skeleton.mp4
+      image: /assets/img/home/root_skeleton.jpg
+    authors:
+      - name: Xuehai Zhou
+      - name: Tianzi Yang
+      - name: Rui Xu
+        me: true
+      - name: Alexander Bucksch
+      - name: Pierre Dutilleul
+      - name: Davoud Torkamaneh
+      - name: Shangpeng Sun
+    venue: Computers and Electronics in Agriculture (2025)
+    links:
+      - label: Paper
+        url: https://doi.org/10.1016/j.compag.2025.110890
+    tldr: A biologically inspired skeletonization framework traces root growth trajectories in 3D point clouds to segment soybean root architectures and measure root length, angle, surface area, and volume.
+    topics: [3d-vision]
+    selected: true
+
+  - title: 3D segmentation within the root system architecture using Point Transformer
+    url: /projects/root_segment/
+    media:
+      video: /assets/video/home/root_segmentation.mp4
+      image: /assets/img/home/root_segmentation.jpg
+    authors:
+      - name: Xuehai Zhou
+      - name: Leshang Bai
+      - name: Rui Xu
+        me: true
+      - name: Rui Kang
+      - name: Davoud Torkamaneh
+      - name: Shangpeng Sun
+    venue: ASABE Annual International Meeting (2024)
+    links:
+      - label: Paper
+        url: /assets/pdf/primary_root.pdf
+      - label: Project Page
+        url: /projects/root_segment/
+    tldr: Segments the primary root in 3D point clouds of Arabidopsis root systems with Point Transformer networks; PTv2 reaches 0.77 mIoU and 0.89 mean accuracy.
+    topics: [3d-vision]
+    selected: false

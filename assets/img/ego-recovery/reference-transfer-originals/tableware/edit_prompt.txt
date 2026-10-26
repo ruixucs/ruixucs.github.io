@@ -1,0 +1,30 @@
+Image 1 is the QUERY BEFORE image.
+
+Image 2 is the QUERY ROUGH AFTER image and is the only output canvas.
+
+Automatically inferred target:
+{
+ "description": "The blue mug remains stationary on the table at its position from Image 2. The actor's hand is moved significantly further away from the mug, likely towards the bottom-left corner of the frame, showing clear separation.",
+ "preserve": [
+  "the position of the blue mug on the table",
+  "the positions of the patterned bowl, white plate, red cube, and laptop"
+ ],
+ "allowed_changes": [
+  "the position and pose of the actor's hand to show it is no longer in contact with or hovering immediately over the mug"
+ ]
+}
+
+Editing mode:
+COMPLETION
+
+Edit Image 2 so that it clearly presents the inferred query-specific target.
+
+Image 2 is authoritative for all reliable visible query content.
+Use Image 1 only to preserve identity and understand the query before-state.
+
+Change only what the inferred transformation requires.
+Preserve everything else.
+Do not copy content from any other scene.
+Make the smallest necessary edit.
+
+Return exactly one edited image.

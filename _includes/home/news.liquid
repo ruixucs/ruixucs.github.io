@@ -1,0 +1,16 @@
+{%- assign news = site.data.homepage.news -%}
+{%- assign visible = include.section.visible | default: 5 -%}
+<section class="section" id="{{ include.section.id }}" data-news>
+  <h2 class="section__title">{{ include.section.title }}</h2>
+  <ul class="news-list" data-visible="{{ visible }}">
+    {% for entry in news %}
+      <li>
+        <b>{{ entry.date }}</b>
+        {{ entry.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+      </li>
+    {% endfor %}
+  </ul>
+  {% if news.size > visible %}
+    <button type="button" class="show-btn" aria-expanded="false" hidden>Show more...</button>
+  {% endif %}
+</section>

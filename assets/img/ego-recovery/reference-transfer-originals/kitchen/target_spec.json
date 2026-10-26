@@ -1,0 +1,35 @@
+{
+ "target_query_after": {
+  "description": "The patterned bowl is resting stably on the wooden surface, and the actor's hand has moved significantly further away from it, clearly showing no contact.",
+  "preserve": [
+   "the position of the patterned bowl on the wooden surface",
+   "the positions of the white plate, blue mug, and red cube",
+   "the background microwaves and countertop layout"
+  ],
+  "allowed_changes": [
+   "the position of the actor's hand, moving it further away from the bowl to confirm the release is complete"
+  ]
+ },
+ "edit_mode_stage1b": "completion",
+ "edit_mode_used": "COMPLETION",
+ "query_progress": {
+  "status": "partial",
+  "evidence": [
+   "In Image 1, the actor is firmly holding the patterned bowl above the wooden surface.",
+   "In Image 2, the bowl is resting on the wooden surface, but the actor's hand is still hovering directly over it, making it unclear if contact has been fully broken."
+  ]
+ },
+ "query_correspondence": [
+  {
+   "reference_role": "the object being held",
+   "query_entity": "the patterned bowl with a grey and white design",
+   "confidence": 1.0
+  },
+  {
+   "reference_role": "the actor's hand",
+   "query_entity": "the hand with a black watch on the wrist",
+   "confidence": 1.0
+  }
+ ],
+ "confidence_stage1b": 0.9
+}

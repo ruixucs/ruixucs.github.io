@@ -1,36 +1,15 @@
 ---
-layout: about
+layout: home
 title: about
 permalink: /
-
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  image_alt: Rui Xu - Computer Science student at McGill University
-  more_info: >
-    <p>McGill University Faculty of Science</p>
-
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
-
-announcements:
-  enabled: false # includes a list of news items
-  scrollable: false # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: false
-  scrollable: false # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+description: Rui Xu is a fourth-year undergraduate student at McGill University and a robotics researcher interested in agentic robotics, task and motion planning, world models, representation learning, and sim-to-real reinforcement learning.
 ---
 
-👋 Hi, I'm Rui Xu
+<!-- Name, photo, links and homepage sections are set in _data/homepage/settings.yml -->
 
-🎓 I'm a third-year undergraduate student at McGill University, pursuing a B.Sc. in Computer Science with a focus on Artificial Intelligence. I will graduate in 2027.
+I am a fourth-year undergraduate student at [McGill University](https://www.mcgill.ca/) and a robotics researcher. I major in Computer Science with a focus on Artificial Intelligence.
 
-🔬 My research interests lie in **Computer Vision**, **Robotics**, and **Visual Language Models (VLMs)**, where I'm passionate about developing intelligent systems that can perceive, understand, and interact with the real world.
+My previous research spans agentic robotics, symbolic task and motion planning (TAMP), world models, and representation learning. I am currently exploring reinforcement learning for sim-to-real transfer.
 
-💼 You can learn more about my past experience in my [projects](/projects/) page.
-
-🌟 I'm actively **looking for research internship opportunities** in Computer Vision and Robotics. If you have any openings or collaboration opportunities, please feel free to contact me!
+🌟 I am always happy to chat about robot learning, sim-to-real transfer, and world models. Feel free to reach out!
+{: .callout}

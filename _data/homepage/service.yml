@@ -1,0 +1,9 @@
+# Service on the homepage. Hidden for now: set `show: true` for the service
+# section in _data/homepage/settings.yml to display it.
+# Add entries by uncommenting or copying the example (a file with only comments
+# means no entries). `text` and `items` accept Markdown; quote values that contain ": ".
+#
+# - text: "Reviewer: CoRL 2026, ICRA 2027"
+# - text: "Teaching assistant:"
+#   items:
+#     - "[COMP 424: Artificial Intelligence](https://example.com) (Fall 2026)"

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 is_project: true
 title: Vision-Only Dexterous Robotic Hand
 description: Implemented and improved a vision-only dexterous robotic hand system, integrating computer vision and 3D pose estimation into robotic grasping control. This project explores replacing traditional sensors with visual perception to enhance precision and adaptability in robotic manipulation.

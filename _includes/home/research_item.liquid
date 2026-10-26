@@ -1,0 +1,91 @@
+{%- assign item = include.item -%}
+{%- assign item_url = item.url | default: item.links.first.url -%}
+<article
+  class="pub"
+  data-topics="{{ item.topics | join: ' ' }}"
+  data-selected="{% if item.selected %}true{% else %}false{% endif %}"
+>
+  {% if item.media %}
+    {% comment %} decorative: the title next to it carries the link and the name {% endcomment %}
+    {% if item_url %}
+      <a class="pub__thumb" href="{{ item_url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {% else %}
+      <div class="pub__thumb" aria-hidden="true">
+    {% endif %}
+    {% if item.media.video %}
+      <video
+        muted
+        loop
+        playsinline
+        preload="none"
+        {% if item.media.image %}
+          poster="{{ item.media.image | relative_url }}"
+        {% endif %}
+        data-autoplay
+      >
+        <source src="{{ item.media.video | relative_url }}" type="video/mp4">
+      </video>
+    {% elsif item.media.image %}
+      <img src="{{ item.media.image | relative_url }}" alt="" loading="lazy">
+    {% endif %}
+    {% if item_url %}</a>{% else %}</div>{% endif %}
+  {% endif %}
+  <div class="pub__info">
+    {% if item_url %}
+      <a class="pub__title" href="{{ item_url | relative_url }}">{{ item.title }}</a>
+    {% else %}
+      <span class="pub__title">{{ item.title }}</span>
+    {% endif %}
+    <p class="pub__meta">
+      {% if item.authors %}
+        <span class="pub__authors">
+          {%- for author in item.authors -%}
+            {%- capture marks -%}
+              {%- if author.equal -%}*{%- endif -%}
+              {%- if author.advising -%}&dagger;{%- endif -%}
+            {%- endcapture -%}
+            {%- if author.me -%}
+              <b>
+                {{- author.name -}}
+                {{- marks -}}
+              </b>
+            {%- elsif author.url -%}
+              <a class="pub__coauthor" href="{{ author.url }}">
+                {{- author.name -}}
+                {{- marks -}}
+              </a>
+            {%- else -%}
+              {{ author.name -}}
+              {{- marks }}
+            {%- endif -%}
+            {%- if author.note %} ({{ author.note }}){% endif -%}
+            {%- unless forloop.last -%}, {% endunless -%}
+          {%- endfor -%}
+        </span>
+        <br>
+      {% endif %}
+      {% if item.role %}
+        <span class="pub__role">{{ item.role }}</span><br>
+      {% endif %}
+      {% if item.venue %}
+        <span class="pub__venue">{{ item.venue }}</span><br>
+      {% endif %}
+      {% for note in item.notes %}
+        <span class="pub__note">{{ note }}</span><br>
+      {% endfor %}
+      {% if item.links %}
+        <span class="pub__links">
+          {%- for link in item.links -%}
+            <a href="{{ link.url | relative_url }}">{{ link.label }}</a>
+            {%- unless forloop.last -%}
+              <span class="sep" aria-hidden="true">&bull;</span>
+            {%- endunless -%}
+          {%- endfor -%}
+        </span>
+      {% endif %}
+    </p>
+    {% if item.tldr %}
+      <p class="pub__tldr"><b>TL;DR</b>: {{ item.tldr }}</p>
+    {% endif %}
+  </div>
+</article>

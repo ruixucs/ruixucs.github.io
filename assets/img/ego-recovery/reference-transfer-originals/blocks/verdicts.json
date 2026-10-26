@@ -1,0 +1,20 @@
+{
+ "candidate": "04_candidate_0.png",
+ "transform": {
+  "analogous_transformation": true,
+  "direction_correct": true,
+  "role_correspondence_correct": true,
+  "completion_correct": true,
+  "evidence": "The red cube is placed on the table in Image 4, similar to Image 2.",
+  "confidence": 0.95
+ },
+ "preservation": {
+  "reliable_query_evidence_preserved": true,
+  "uninvolved_content_preserved": true,
+  "unnecessary_changes": [],
+  "global_recomposition": false,
+  "visual_artifacts": [],
+  "confidence": 0.95
+ },
+ "score": 2.28
+}

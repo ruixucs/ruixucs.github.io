@@ -1,0 +1,32 @@
+{
+ "target_query_after": {
+  "description": "The red cube is resting on the table surface. The actor's hand is pulled back and is no longer in contact with the cube.",
+  "preserve": [
+   "the positions of the red, orange, white, and green cubes on the table",
+   "the actor's hand position near but not grasping the cube"
+  ],
+  "allowed_changes": []
+ },
+ "edit_mode_stage1b": "identity",
+ "edit_mode_used": "COMPLETION",
+ "query_progress": {
+  "status": "complete",
+  "evidence": [
+   "In Image 2, the red cube is resting on the table surface to the left of its original position above the orange cube.",
+   "The actor's hand is open and no longer grasping the red cube, fulfilling the criteria for the after-state."
+  ]
+ },
+ "query_correspondence": [
+  {
+   "reference_role": "the object being held",
+   "query_entity": "the red cube held in the air in Image 1 and placed on the table in Image 2",
+   "confidence": 1.0
+  },
+  {
+   "reference_role": "the actor's hand",
+   "query_entity": "the hand moving the red cube",
+   "confidence": 1.0
+  }
+ ],
+ "confidence_stage1b": 1.0
+}

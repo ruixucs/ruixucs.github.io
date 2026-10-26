@@ -1,0 +1,42 @@
+{%- assign research = site.data.homepage.research -%}
+{%- assign has_equal = false -%}
+{%- assign has_advising = false -%}
+{%- for item in research.items -%}
+  {%- for author in item.authors -%}
+    {%- if author.equal -%}
+      {%- assign has_equal = true -%}
+    {%- endif -%}
+    {%- if author.advising -%}
+      {%- assign has_advising = true -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+<section class="section" id="{{ include.section.id }}" data-research>
+  <h2 class="section__title">{{ include.section.title }}</h2>
+  <div class="pub-toggle" role="group" aria-label="Show research">
+    <button type="button" data-view="selected" aria-pressed="false">Selected</button>
+    <button type="button" data-view="date" class="active" aria-pressed="true">All by date</button>
+    <button type="button" data-view="topic" aria-pressed="false">All by topic</button>
+  </div>
+  <div class="topic-tabs" role="group" aria-label="Topics" hidden>
+    {% for topic in research.topics %}
+      {% assign topic_items = research.items | where_exp: 'item', 'item.topics contains topic.key' %}
+      {% if topic_items.size > 0 %}
+        <button type="button" data-topic="{{ topic.key }}" aria-pressed="false">{{ topic.label }}</button>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="pub-list">
+    {% for item in research.items %}
+      {% include home/research_item.liquid item=item %}
+    {% endfor %}
+  </div>
+  {% if has_equal or has_advising %}
+    <p class="pub-footnote">
+      {%- if has_equal %}* equal contribution{% endif -%}
+      {%- if has_equal and has_advising %}, {% endif -%}
+      {%- if has_advising %}&dagger; equal advising{% endif -%}
+      .
+    </p>
+  {% endif %}
+</section>

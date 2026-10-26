@@ -1,0 +1,7 @@
+{%- assign settings = site.data.homepage.settings -%}
+<footer class="site-footer">
+  &copy; {{ site.time | date: '%Y' }}
+  {{ settings.name -}}
+  {%- if site.last_updated %} · Last updated {{ site.time | date: '%b %Y' }}{% endif %} · Design adapted from
+  <a href="https://xxm19.github.io/">Xiaomeng Xu</a>
+</footer>

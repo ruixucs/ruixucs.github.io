@@ -1,0 +1,19 @@
+{%- assign category = include.section.category | default: 'fun' -%}
+{%- assign projects = site.projects | where: 'category', category | sort: 'importance' -%}
+<section class="section" id="{{ include.section.id }}">
+  <h2 class="section__title">{{ include.section.title }}</h2>
+  <ul class="side-projects">
+    {% for project in projects %}
+      <li class="side-project">
+        <a class="side-project__title" href="{{ project.url | relative_url }}">{{ project.title }}</a>
+        {% if project.github %}
+          <span class="sep" aria-hidden="true">&bull;</span>
+          <a class="side-project__code" href="{{ project.github }}">Code</a>
+        {% endif %}
+        {% if project.description %}
+          <p class="side-project__desc">{{ project.description }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
