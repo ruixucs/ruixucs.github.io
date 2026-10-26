@@ -1,0 +1,28 @@
+Image 1 is the QUERY BEFORE image.
+
+Image 2 is the QUERY ROUGH AFTER image and is the only output canvas.
+
+Automatically inferred target:
+{
+ "description": "The red cube is resting on the table surface. The actor's hand is pulled back and is no longer in contact with the cube.",
+ "preserve": [
+  "the positions of the red, orange, white, and green cubes on the table",
+  "the actor's hand position near but not grasping the cube"
+ ],
+ "allowed_changes": []
+}
+
+Editing mode:
+COMPLETION
+
+Edit Image 2 so that it clearly presents the inferred query-specific target.
+
+Image 2 is authoritative for all reliable visible query content.
+Use Image 1 only to preserve identity and understand the query before-state.
+
+Change only what the inferred transformation requires.
+Preserve everything else.
+Do not copy content from any other scene.
+Make the smallest necessary edit.
+
+Return exactly one edited image.

@@ -1,0 +1,65 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Bot or Not | Rui Xu </title> <meta name="author" content="Rui Xu"> <meta name="description" content="Social media bot detector — 5th overall, 3rd in French at the Bot-or-Not Hackathon."> <meta name="keywords" content="Rui Xu, ruixucs, Computer Vision, Robotics, Visual Language Models, VLMs, McGill University, Computer Science, AI research"> <meta property="og:site_name" content="Rui Xu"> <meta property="og:type" content="website"> <meta property="og:title" content="Rui Xu | Bot or Not"> <meta property="og:url" content="https://ruixucs.github.io/projects/bot_or_not/"> <meta property="og:description" content="Social media bot detector — 5th overall, 3rd in French at the Bot-or-Not Hackathon."> <meta property="og:image" content="/assets/img/prof_pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Bot or Not"> <meta name="twitter:description" content="Social media bot detector — 5th overall, 3rd in French at the Bot-or-Not Hackathon."> <meta name="twitter:image" content="/assets/img/prof_pic.jpg"> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Rui Xu"
+        },
+        "url": "https://ruixucs.github.io/projects/bot_or_not/",
+        "@type": "WebSite",
+        "description": "Social media bot detector — 5th overall, 3rd in French at the Bot-or-Not Hackathon.",
+        "headline": "Bot or Not",
+        
+        "sameAs": ["https://github.com/ruixucs"],
+        
+        "name": "Rui Xu",
+        "@context": "https://schema.org"
+    }
+  </script> <link rel="canonical" href="https://ruixucs.github.io/projects/bot_or_not/"> <link rel="icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300..700&amp;display=swap"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99"> <link rel="stylesheet" href="/assets/css/home.css?3fb97e42270a07855565547e9fab4228"> <noscript> <style>.pub-toggle{display:none}</style> </noscript> <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script> <script>
+      // figure.liquid falls back to the original image with $('.responsive-img-srcset').remove()
+      // when a WebP variant is missing; jQuery is not loaded here, so provide just that call.
+      window.$ =
+        window.$ ||
+        function (selector) {
+          return {
+            remove: function () {
+              Array.prototype.forEach.call(document.querySelectorAll(selector), function (el) {
+                el.parentNode.removeChild(el);
+              });
+            },
+          };
+        };
+    </script> </head> <body class="project-page"> <main class="page page--article"> <p class="back-link"> <a href="/#projects">← Back to homepage</a> </p> <h1 class="article-title">Bot or Not</h1> <p class="article-description">Social media bot detector — 5th overall, 3rd in French at the Bot-or-Not Hackathon.</p> <p class="article-links"><a href="https://github.com/ruixucs/Bot-or-Not" rel="external nofollow noopener" target="_blank">Code</a></p> <article class="article"> <h2 id="the-challenge">The Challenge</h2> <p>Given a dataset of social media users and their posts, figure out who’s a bot and who’s a human. Sounds easy? The scoring says otherwise:</p> <table> <thead> <tr> <th>Outcome</th> <th>Points</th> </tr> </thead> <tbody> <tr> <td>Correctly identified bot (TP)</td> <td><strong>+4</strong></td> </tr> <tr> <td>Missed a bot (FN)</td> <td><strong>-1</strong></td> </tr> <tr> <td>Accused a human (FP)</td> <td><strong>-2</strong></td> </tr> </tbody> </table> <p>False accusations hurt. This isn’t just accuracy — it’s a game of precision under pressure.</p> <p><strong>Result: 5th place overall, 3rd in French.</strong></p> <hr> <h2 id="how-we-catch-bots">How We Catch Bots</h2> <h3 id="feature-engineering--147-features">Feature Engineering — 147 Features</h3> <p>We extract signals from every angle:</p> <table> <thead> <tr> <th>Layer</th> <th>Feature Group</th> <th>Count</th> <th>What It Captures</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>User Profile</td> <td>~15</td> <td>Username patterns, bio anomalies, location signals</td> </tr> <tr> <td>1</td> <td>Posting Behavior</td> <td>~20</td> <td>Frequency, intervals, hour entropy, burst detection</td> </tr> <tr> <td>1</td> <td>Content</td> <td>~20</td> <td>Vocabulary size, hashtag abuse, duplicate ratio</td> </tr> <tr> <td>1</td> <td>Advanced Temporal</td> <td>~20</td> <td>Time DNA, session patterns, second-level periodicity</td> </tr> <tr> <td>1</td> <td>Text Stylometry</td> <td>~14</td> <td>N-gram repetition, Zipf deviation, compression ratio</td> </tr> <tr> <td>1</td> <td>Mention Network</td> <td>~5</td> <td>Mention entropy, concentration, reciprocity</td> </tr> <tr> <td>2</td> <td>Sentence Embeddings</td> <td>~5</td> <td>Semantic similarity via multilingual MiniLM</td> </tr> <tr> <td>2</td> <td>Perplexity</td> <td>~7</td> <td>GPT-2 (EN) / BLOOM-560m (FR) language model scores</td> </tr> <tr> <td>2</td> <td>Topic Coherence</td> <td>~8</td> <td>Topic diversity, switch rate, sequential coherence</td> </tr> <tr> <td>2</td> <td>Sentiment</td> <td>~9</td> <td>Polarity, volatility, extremity</td> </tr> <tr> <td>3</td> <td>Cross-user</td> <td>~4</td> <td>Cross-user embedding similarity</td> </tr> <tr> <td>3</td> <td>HDBSCAN Clustering</td> <td>~8</td> <td>Behavioral and temporal pattern clusters</td> </tr> </tbody> </table> <h3 id="model-architecture--stacking-ensemble">Model Architecture — Stacking Ensemble</h3> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                    ┌──────────┐
+                    │ Features │
+                    │  (147)   │
+                    └────┬─────┘
+           ┌─────────────┼─────────────┐
+           ▼             ▼             ▼
+      ┌─────────┐  ┌──────────┐  ┌──────────┐
+      │ XGBoost │  │ LightGBM │  │ CatBoost │
+      └────┬────┘  └────┬─────┘  └────┬─────┘
+           └─────────────┼─────────────┘
+                         ▼
+                 ┌───────────────┐
+                 │   Logistic    │
+                 │  Regression   │
+                 │ (Meta-Learner)│
+                 └───────┬───────┘
+                         ▼
+                  ┌─────────────┐
+                  │  Threshold  │
+                  │ Optimization│
+                  └───────┬─────┘
+                          ▼
+                  ┌──────────────┐
+                  │ Rule-Based   │
+                  │ Post-Process │
+                  └──────────────┘
+</code></pre></div></div> <ul> <li> <strong>Base models</strong> use asymmetric loss functions (W_POS=5.0, W_NEG=2.0) that directly encode the competition’s scoring</li> <li> <strong>Hyperparameters</strong> optimized via Optuna (200 trials, 3-fold CV)</li> <li> <strong>Threshold</strong> found by two-pass coarse-to-fine search on competition score</li> </ul> <h3 id="rule-based-rescue">Rule-Based Rescue</h3> <p>Even after the model, we scan for patterns it might miss:</p> <table> <thead> <tr> <th>Rule</th> <th>Catches</th> </tr> </thead> <tbody> <tr> <td><strong>Confused Persona</strong></td> <td>Accounts where 80%+ posts are questions with high streak patterns</td> </tr> <tr> <td><strong>Batch Posting</strong></td> <td>4+ posts at the exact same second — humans don’t do that</td> </tr> <tr> <td><strong>Engagement Farming</strong></td> <td>High “like and retweet” solicitation frequency</td> </tr> <tr> <td><strong>Hex Encoding Leaks</strong></td> <td>LLM-generated text with encoding artifacts (e.g., <code class="language-plaintext highlighter-rouge">cine9ma</code> → <code class="language-plaintext highlighter-rouge">cinéma</code>)</td> </tr> <tr> <td><strong>JSON Format Leaks</strong></td> <td>Pipeline artifacts where raw JSON wasn’t unpacked</td> </tr> </tbody> </table> <hr> <h2 id="multilingual-support">Multilingual Support</h2> <p>Separate pipelines for English and French datasets. French bots have different behavioral signatures — our system adapts thresholds and language models accordingly (GPT-2 for EN, BLOOM-560m for FR).</p> <hr> <h2 id="team">Team</h2> <p><strong>Bot_killer_RX</strong> — because someone had to kill the bots.</p> </article> </main> <footer class="site-footer"> © 2026 Rui (Ray) Xu · Design adapted from <a href="https://xxm19.github.io/" rel="external nofollow noopener" target="_blank">Xiaomeng Xu</a> </footer> <div id="robot-container" aria-hidden="true" style="position: fixed; bottom: 0vw; right: 3vw; width: 25vw; height: 25vw; min-width: 150px; min-height: 150px; max-width: 500px; max-height: 500px; z-index: 1000; pointer-events: none; overflow: visible;"></div> <script type="module" src="/assets/js/robot-model.js"></script> </body> </html>

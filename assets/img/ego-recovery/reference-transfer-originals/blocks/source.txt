@@ -1,0 +1,2 @@
+vlm_seg/trace_4block_191028/4block_20260805_191028_seg1_PutOnTable
+edit_mode=identity  score=2.37
