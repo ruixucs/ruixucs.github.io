@@ -36,7 +36,6 @@ related_publications: false
     </div>
 </div>
 
-
 <!-- Include three.js and PLYLoader via CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
@@ -158,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 ## Cite our works
+
 If you find this work helpful for your research, we kindly request that you cite the following papers:
 
 ```

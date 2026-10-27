@@ -17,7 +17,7 @@ We all drown in emails. Some are urgent, some are junk, and the important ones h
 
 **Extension Is All You Need** — a Chrome extension that brings AI directly into Outlook Web. It reads, analyzes, highlights, summarizes, and even drafts replies for you.
 
-Yes, the name is a tribute to *that* paper.
+Yes, the name is a tribute to _that_ paper.
 
 ---
 
@@ -27,13 +27,13 @@ Yes, the name is a tribute to *that* paper.
 
 Emails light up the moment you open Outlook:
 
-| Condition | Visual Cue |
-|-----------|-----------|
-| Worth reading (4–5 score) | Gold border + star icon |
-| Urgent reply needed | Red pulsing border |
-| Normal reply needed | Orange border |
-| School-related & involving you | Blue background |
-| Low priority (score 1) | Grayed out |
+| Condition                      | Visual Cue              |
+| ------------------------------ | ----------------------- |
+| Worth reading (4–5 score)      | Gold border + star icon |
+| Urgent reply needed            | Red pulsing border      |
+| Normal reply needed            | Orange border           |
+| School-related & involving you | Blue background         |
+| Low priority (score 1)         | Grayed out              |
 
 Every email also gets a badge: **Reply**, **Read**, or **Ad**.
 

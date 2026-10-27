@@ -2,7 +2,7 @@
 layout: home
 title: about
 permalink: /
-description: Rui Xu is a fourth-year undergraduate student at McGill University and a robotics researcher interested in agentic robotics, task and motion planning, world models, representation learning, and sim-to-real reinforcement learning.
+description: Ray Xu is a fourth-year undergraduate student at McGill University and a robotics researcher interested in agentic robotics, task and motion planning, world models, representation learning, and sim-to-real reinforcement learning.
 ---
 
 <!-- Name, photo, links and homepage sections are set in _data/homepage/settings.yml -->

@@ -1,22 +1,22 @@
 {
- "candidate": "04_candidate_0.png",
- "transform": {
-  "reference_change": "The held object is placed on the surface.",
-  "query_change": "The held object is placed on the surface.",
-  "analogous_transformation": true,
-  "direction_correct": true,
-  "role_correspondence_correct": true,
-  "completion_correct": true,
-  "evidence": "The bowl that was held is now on the surface.",
-  "confidence": 1.0
- },
- "preservation": {
-  "reliable_query_evidence_preserved": true,
-  "uninvolved_content_preserved": true,
-  "unnecessary_changes": [],
-  "global_recomposition": false,
-  "visual_artifacts": [],
-  "confidence": 0.95
- },
- "score": 2.37
+  "candidate": "04_candidate_0.png",
+  "transform": {
+    "reference_change": "The held object is placed on the surface.",
+    "query_change": "The held object is placed on the surface.",
+    "analogous_transformation": true,
+    "direction_correct": true,
+    "role_correspondence_correct": true,
+    "completion_correct": true,
+    "evidence": "The bowl that was held is now on the surface.",
+    "confidence": 1.0
+  },
+  "preservation": {
+    "reliable_query_evidence_preserved": true,
+    "uninvolved_content_preserved": true,
+    "unnecessary_changes": [],
+    "global_recomposition": false,
+    "visual_artifacts": [],
+    "confidence": 0.95
+  },
+  "score": 2.37
 }

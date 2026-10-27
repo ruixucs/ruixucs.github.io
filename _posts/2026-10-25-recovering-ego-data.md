@@ -55,6 +55,8 @@ Could we use the footage we already have, together with a few clear reference ex
 
 At about 1.90 seconds, a visible gap has opened between the white and green blocks, but the white block is still moving. Look further ahead and the video enters PutOnTable. **The moment an action finishes and the moment its outcome is easiest to recognize do not always coincide.** Moving the selected frame later can bring the next action's effects into the image.
 
+There are other approaches to try, including optical flow and methods based on visual feature similarity. In my project, however, I found these of limited practical use for this problem.
+
 To walk through the editing process, we will use a separate PutOnTable clip. The Unstack video illustrates the selection problem; the mug example below shows how an outcome frame can be edited and checked.
 
 **Start with what the edit changes.** In the original frame, the mug is on the table, but the hand remains close to its handle. In the generated frame, the hand has moved into the foreground, leaving a visible gap.
@@ -85,18 +87,13 @@ Second, identify the corresponding object in the current scene. The target mappe
 
 The target has three fields. Here is a simplified version of the saved specification:
 
-~~~json
+```json
 {
   "description": "The blue mug stays on the table. The hand moves away so that release is clearly visible.",
-  "preserve": [
-    "The mug's position in the original observation",
-    "The bowl, plate, red cube, laptop, and scene layout"
-  ],
-  "allowed_changes": [
-    "The hand's position and pose to show separation from the mug"
-  ]
+  "preserve": ["The mug's position in the original observation", "The bowl, plate, red cube, laptop, and scene layout"],
+  "allowed_changes": ["The hand's position and pose to show separation from the mug"]
 }
-~~~
+```
 
 These fields define the desired state, the content that must remain, and the changes that are allowed. They turn “complete PutOnTable” into requirements that can be checked individually.
 
@@ -104,7 +101,7 @@ Third, establish which image the editor should use as its source of truth. The i
 
 This excerpt from the actual prompt assigns those roles and limits the edit:
 
-~~~text
+```text
 Image 2 is the QUERY ROUGH AFTER image and is the only output canvas.
 Image 2 is authoritative for all reliable visible query content.
 Use Image 1 only to preserve identity and understand the query before-state.
@@ -113,7 +110,7 @@ Change only what the inferred transformation requires.
 Preserve everything else.
 Do not copy content from any other scene.
 Make the smallest necessary edit.
-~~~
+```
 
 The structured target is supplied alongside these instructions. The complete mug prompt also includes the editing mode and output requirements; a download is provided below. An edit can still fail, so the workflow supports generating multiple candidates for a verifier to assess.
 

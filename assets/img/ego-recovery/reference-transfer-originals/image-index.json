@@ -12,100 +12,67 @@
     {
       "file": "reference/before-action.png",
       "archive_member": "figure2/reference/PutOnTable_pre.png",
-      "dimensions": [
-        640,
-        432
-      ],
+      "dimensions": [640, 432],
       "sha256": "1626a1e18d034581e44b6749989e2a2c3f7545715a534a40712f85ab5866cbe7"
     },
     {
       "file": "reference/after-action.png",
       "archive_member": "figure2/reference/PutOnTable_post.png",
-      "dimensions": [
-        640,
-        432
-      ],
+      "dimensions": [640, 432],
       "sha256": "a78e3b6957242607dda244b3f44686c703a379d4be619ac25eaadf8ceb96d52f"
     },
     {
       "file": "blocks/before-action.png",
       "archive_member": "figure2/picked/4block/pre.png",
-      "dimensions": [
-        640,
-        360
-      ],
+      "dimensions": [640, 360],
       "sha256": "b248079ec13a64b91548fe97bd61be58b4bd9c23730871cbd8921503d268938a"
     },
     {
       "file": "blocks/before-edit.png",
       "archive_member": "figure2/picked/4block/before.png",
-      "dimensions": [
-        640,
-        360
-      ],
+      "dimensions": [640, 360],
       "sha256": "743f9a7e0ac88b0f24f21c390dec7e7bce2830726b3d159602244ec774c0081a"
     },
     {
       "file": "blocks/after-edit.png",
       "archive_member": "figure2/picked/4block/after.png",
-      "dimensions": [
-        640,
-        360
-      ],
+      "dimensions": [640, 360],
       "sha256": "e3a4cafe4b560018bdea6c5e9f7ceb7bf7372099a830ca7feaccd72601009749"
     },
     {
       "file": "tableware/before-action.png",
       "archive_member": "figure2/picked/ts15/pre.png",
-      "dimensions": [
-        640,
-        360
-      ],
+      "dimensions": [640, 360],
       "sha256": "ef14e64271c919855994588fa529e279782c2c98b46bd98829b1f37af218f5ea"
     },
     {
       "file": "tableware/before-edit.png",
       "archive_member": "figure2/picked/ts15/before.png",
-      "dimensions": [
-        640,
-        360
-      ],
+      "dimensions": [640, 360],
       "sha256": "240546ea7cc47bc36bfa85bfcd30bb2fc10de92741d0ca3664383efbc8eecf2c"
     },
     {
       "file": "tableware/after-edit.png",
       "archive_member": "figure2/picked/ts15/after.png",
-      "dimensions": [
-        640,
-        360
-      ],
+      "dimensions": [640, 360],
       "sha256": "4d8d937e3560d3a9461dd70273245adfc6716cb0efb37110bcd376687fc20da8"
     },
     {
       "file": "kitchen/before-action.png",
       "archive_member": "figure2/picked/ncb20/pre.png",
-      "dimensions": [
-        640,
-        360
-      ],
+      "dimensions": [640, 360],
       "sha256": "20db211d6e28aaebee7cd473ffdee2d86311e63ba33512351651087e813ae301"
     },
     {
       "file": "kitchen/before-edit.png",
       "archive_member": "figure2/picked/ncb20/before.png",
-      "dimensions": [
-        640,
-        360
-      ],
+      "dimensions": [640, 360],
       "sha256": "c871c2a3c21bd2c6b7894714579c3f0ffc684b23336901c1ed14124d0ed59562"
     },
     {
       "file": "kitchen/after-edit.png",
       "archive_member": "figure2/picked/ncb20/after.png",
-      "dimensions": [
-        640,
-        360
-      ],
+      "dimensions": [640, 360],
       "sha256": "eb68c9b4d6f322808c79a0f1dd74a67963fd8a99a2be259a734d15bb37956d2b"
     }
   ]

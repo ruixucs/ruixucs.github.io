@@ -23,13 +23,13 @@ Built for the **McGill COMP424 (Fall 2025) Final Project**, our agent is a pure-
 
 ### Core Techniques
 
-| Technique | What It Does |
-|-----------|-------------|
+| Technique                   | What It Does                                                                                                |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | **Bitboard Representation** | Encodes the entire board state in 64-bit integers. Move generation becomes blazing-fast bitwise operations. |
-| **Minimax Search** | Explores the game tree by simulating all possible moves for both players, assuming optimal play. |
-| **Alpha-Beta Pruning** | Cuts off branches that can't possibly affect the final decision — typically prunes 50%+ of the tree. |
-| **Iterative Deepening** | Starts shallow, goes deeper as time allows. Two-phase search: quick ordering pass, then full-depth pass. |
-| **Precomputed Move Tables** | Lookup tables for all possible 1-step and 2-step moves — zero runtime computation for move generation. |
+| **Minimax Search**          | Explores the game tree by simulating all possible moves for both players, assuming optimal play.            |
+| **Alpha-Beta Pruning**      | Cuts off branches that can't possibly affect the final decision — typically prunes 50%+ of the tree.        |
+| **Iterative Deepening**     | Starts shallow, goes deeper as time allows. Two-phase search: quick ordering pass, then full-depth pass.    |
+| **Precomputed Move Tables** | Lookup tables for all possible 1-step and 2-step moves — zero runtime computation for move generation.      |
 
 ### Performance
 
@@ -41,10 +41,10 @@ Built for the **McGill COMP424 (Fall 2025) Final Project**, our agent is a pure-
 
 ## Team
 
-| Member | Contact |
-|--------|---------|
-| **Rui Xu** | [ruixucs.github.io](https://ruixucs.github.io) |
-| **Wenbo Bi** | wenbo.bi@mail.mcgill.ca |
-| **Hancheng Song** | hancheng.song@mail.mcgill.ca |
+| Member            | Contact                                        |
+| ----------------- | ---------------------------------------------- |
+| **Rui Xu**        | [ruixucs.github.io](https://ruixucs.github.io) |
+| **Wenbo Bi**      | wenbo.bi@mail.mcgill.ca                        |
+| **Hancheng Song** | hancheng.song@mail.mcgill.ca                   |
 
 > ⚠️ The public repo is a not-fully-optimized version — our competition submission stays under wraps.
