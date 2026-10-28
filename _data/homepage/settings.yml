@@ -17,9 +17,8 @@ links:
   - label: Blog
     url: /blog/
 
-# Interactive 3D robot (assets/js/robot-model.js) in the bottom-right corner of
-# every page.
-robot_model: true
+# Keep the floating 3D decoration disabled so the page stays focused on the content.
+robot_model: false
 
 # Homepage sections, in page order. Set `show: false` to hide a section; the
 # content stays in its data file. `id` is both the #anchor and the template name
